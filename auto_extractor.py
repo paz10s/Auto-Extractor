@@ -2,7 +2,7 @@ import zipfile, rarfile, os, re
 
 zip_files = []
 rar_files = []
-downloads_folder = re.match(r'\w:\\Users\\\w+\\', os.getcwd())[0]+'downloads\\'
+downloads_folder = re.findall(r'\w:\\Users\\\w+\\', os.getcwd())[0]+'downloads\\'
 
 for file in os.listdir(downloads_folder):
     if file.endswith('.zip'):
@@ -11,9 +11,9 @@ for file in os.listdir(downloads_folder):
         rar_files.append(file)
 
 if len(zip_files) > 0 or len(rar_files) > 0:
-    print('Extracted {} .zip and {} .rar files:'.format(len(zip_files), len(rar_files)))
+    print('\nExtracted {} .zip and {} .rar files:'.format(len(zip_files), len(rar_files)))
 else:
-    print('No compressed files to extract.')
+    print('\nNo compressed files to extract.')
 
 for file in zip_files:
     with zipfile.ZipFile(downloads_folder+file, 'r') as my_zip:
@@ -30,5 +30,3 @@ for file in rar_files:
     print(file)
 
 input('\nPress Enter to exit.')
-
-os.startfile(downloads_folder)

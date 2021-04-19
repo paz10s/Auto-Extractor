@@ -1,5 +1,6 @@
 # auto-extractor
 Extracts all compressed files in a breeze.
 
-This python program converts all .zip and .rar files in the downloads folder into simple folders, eliminating the need for extracting each compressed file manually. The program will open the downloads folder afterwards for easy access.
-I converted the .py file into a .exe file using PyInstaller.
+Converts all .zip and .rar files in the downloads folder into folders, eliminating the need for extracting each compressed file manually. The program will open the downloads folder afterwards for easy access.
+
+The .py file has been converted into a .exe file using PyInstaller. Both .py and .exe files are included.
